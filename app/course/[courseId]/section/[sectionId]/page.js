@@ -1,5 +1,5 @@
 "use client";
-import { use, useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../../../../AuthProvider";
@@ -9,7 +9,7 @@ import { Question } from "../../../../Question";
 const TABS = ["Lesson", "Practice", "Quiz", "Learn & Help"];
 
 export default function SectionPage({ params }) {
-  const { courseId, sectionId } = use(params);
+  const { courseId, sectionId } = params;
   const { user, ready, hasCourse, getProgress, markDone } = useAuth();
   const router = useRouter();
   const course = getCourse(courseId);

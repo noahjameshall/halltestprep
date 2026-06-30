@@ -60,6 +60,7 @@ export function AuthProvider({ children }) {
   const grantCourse = useCallback((courseId, type) => {
     if (!user) return;
     const users = load(LS_USERS, {});
+    if (!users[user.email]) return;
     users[user.email].entitlements = users[user.email].entitlements || {};
     users[user.email].entitlements[courseId] = { type, since: Date.now() };
     persist(users);
@@ -75,6 +76,7 @@ export function AuthProvider({ children }) {
     if (!user) return;
     const users = load(LS_USERS, {});
     const u = users[user.email];
+    if (!u) return;
     u.progress = u.progress || {};
     u.progress[courseId] = u.progress[courseId] || {};
     u.progress[courseId][sectionId] = true;

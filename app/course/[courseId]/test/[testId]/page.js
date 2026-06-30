@@ -1,5 +1,5 @@
 "use client";
-import { use, useEffect } from "react";
+import { useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useAuth } from "../../../../AuthProvider";
@@ -7,7 +7,7 @@ import { getCourse, getTest } from "@/lib/courses";
 import { TestRunner } from "../../../../Question";
 
 export default function TestPage({ params }) {
-  const { courseId, testId } = use(params);
+  const { courseId, testId } = params;
   const { user, ready, hasCourse } = useAuth();
   const router = useRouter();
   const course = getCourse(courseId);

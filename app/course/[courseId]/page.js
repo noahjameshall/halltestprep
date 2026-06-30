@@ -1,11 +1,10 @@
 "use client";
-import { use } from "react";
 import Link from "next/link";
 import { useAuth } from "../../AuthProvider";
 import { getCourse, courseStats } from "@/lib/courses";
 
 export default function CourseOverview({ params }) {
-  const { courseId } = use(params);
+  const { courseId } = params;
   const { user, ready, hasCourse, getProgress } = useAuth();
   const course = getCourse(courseId);
   const stats = courseStats(courseId);
