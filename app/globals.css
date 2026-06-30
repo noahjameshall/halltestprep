@@ -186,3 +186,17 @@ h1, h2, h3, h4 { line-height: 1.2; margin: 0 0 0.4em; }
 .flex { display:flex; } .between{justify-content:space-between;} .center-y{align-items:center;} .gap{gap:12px;} .wrap{flex-wrap:wrap;}
 .mt { margin-top: 16px; } .mt-lg{margin-top:28px;} .mb{margin-bottom:16px;}
 .hide-mobile { } @media(max-width:680px){ .hide-mobile{ display:none; } }
+
+/* Diagrams */
+.diagram { margin: 16px 0 8px; padding: 16px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow-x: auto; text-align: center; }
+.diagram svg { max-width: 100%; height: auto; }
+.diagram figcaption { color: var(--ink-soft); font-size: 13px; margin-top: 8px; }
+.link-list { list-style: none; padding: 0; margin: 8px 0; }
+.link-list li { padding: 9px 0; border-bottom: 1px solid var(--line); }
+.link-list a { color: var(--brand); font-weight: 650; }
+.link-list a:hover { text-decoration: underline; }
+/* Resources grid on overview */
+.res-card { display:block; border:1px solid var(--line); border-radius:12px; padding:16px; background:#fff; }
+.res-card:hover { border-color: var(--brand); box-shadow: var(--shadow); }
+.res-card .t { font-weight:700; color:var(--brand); }
+.hero .diagram { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.15); }

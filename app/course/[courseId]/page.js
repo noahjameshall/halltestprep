@@ -23,9 +23,9 @@ export default function CourseOverview({ params }) {
           <h1 style={{ marginBottom: 10 }}>{course.title}</h1>
           <p className="lead">{course.tagline}</p>
           <div className="hero-stats" style={{ marginTop: 28 }}>
-            <div className="stat"><div className="n">{course.examFacts.questions}</div><div className="l">Exam questions</div></div>
-            <div className="stat"><div className="n">{course.examFacts.hours} hrs</div><div className="l">Appointment</div></div>
-            <div className="stat"><div className="n">{stats.sections}</div><div className="l">Knowledge areas</div></div>
+            <div className="stat"><div className="n">{course.examFacts.questions}</div><div className="l">{course.examFacts.questionsLabel || "Exam questions"}</div></div>
+            <div className="stat"><div className="n">{course.examFacts.hours} hrs</div><div className="l">{course.examFacts.hoursLabel || "Appointment"}</div></div>
+            <div className="stat"><div className="n">{stats.sections}</div><div className="l">{course.examFacts.areasLabel || "Knowledge areas"}</div></div>
             <div className="stat"><div className="n">{stats.totalQuestions}+</div><div className="l">Practice questions</div></div>
           </div>
           <div className="hero-cta">
@@ -38,6 +38,9 @@ export default function CourseOverview({ params }) {
               </>
             )}
           </div>
+          {course.heroDiagram && (
+            <div className="diagram" style={{ marginTop: 28 }} dangerouslySetInnerHTML={{ __html: course.heroDiagram }} />
+          )}
         </div>
       </section>
 

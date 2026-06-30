@@ -73,7 +73,7 @@ export default function SectionPage({ params }) {
       <main>
         <div className="flex between center-y wrap gap">
           <div>
-            <div className="muted" style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".06em", textTransform: "uppercase" }}>Section {idx + 1} of {course.sections.length} · {section.weight} of exam</div>
+            <div className="muted" style={{ fontSize: 13, fontWeight: 700, letterSpacing: ".06em", textTransform: "uppercase" }}>Section {idx + 1} of {course.sections.length} · {section.weight}</div>
             <h1 style={{ margin: "4px 0" }}>{section.title}</h1>
           </div>
           <span className="tag">Priority: {section.priority}</span>
@@ -93,19 +93,38 @@ export default function SectionPage({ params }) {
             <ul>{section.guide.objectives.map((o, i) => <li key={i}>{o}</li>)}</ul>
             <p className="muted"><strong>Prerequisites:</strong> {section.guide.prereqs}</p>
 
-            <h3 className="mt-lg">Key equations</h3>
-            <table className="eq-table">
-              <tbody>
-                {section.keyEquations.map((e, i) => (
-                  <tr key={i}><td className="name">{e.name}</td><td className="formula">{e.formula}</td><td className="where">{e.where}</td></tr>
-                ))}
-              </tbody>
-            </table>
+            {section.keyEquations && section.keyEquations.length > 0 && (
+              <>
+                <h3 className="mt-lg">{section.factsLabel || "Key equations"}</h3>
+                <table className="eq-table">
+                  <tbody>
+                    {section.keyEquations.map((e, i) => (
+                      <tr key={i}><td className="name">{e.name}</td><td className="formula">{e.formula}</td><td className="where">{e.where}</td></tr>
+                    ))}
+                  </tbody>
+                </table>
+              </>
+            )}
 
-            <h3 className="mt-lg">The concepts</h3>
+            <h3 className="mt-lg">{section.conceptsLabel || "The concepts"}</h3>
             {section.lesson.map((b, i) => (
-              <div key={i} className="lesson-block"><h4>{b.heading}</h4><p>{b.body}</p></div>
+              <div key={i} className="lesson-block">
+                <h4>{b.heading}</h4>
+                <p>{b.body}</p>
+                {b.diagram && <figure className="diagram" dangerouslySetInnerHTML={{ __html: b.diagram }} />}
+              </div>
             ))}
+
+            {section.links && section.links.length > 0 && (
+              <div className="mt-lg">
+                <h3>Helpful links &amp; resources</h3>
+                <ul className="link-list">
+                  {section.links.map((l, i) => (
+                    <li key={i}><a href={l.url} target="_blank" rel="noopener noreferrer">{l.label} ↗</a>{l.note ? <span className="muted"> — {l.note}</span> : null}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             <div className="callout warn">
               <strong>⚠ Watch out</strong>
@@ -136,12 +155,16 @@ export default function SectionPage({ params }) {
         {tab === "Learn & Help" && (
           <div>
             <p className="muted">Stuck on a problem type? Here is every key equation and a fully worked solution for each practice problem in this section.</p>
-            <h3>Formula sheet</h3>
-            <table className="eq-table">
-              <tbody>{section.keyEquations.map((e, i) => (
-                <tr key={i}><td className="name">{e.name}</td><td className="formula">{e.formula}</td><td className="where">{e.where}</td></tr>
-              ))}</tbody>
-            </table>
+            {section.keyEquations && section.keyEquations.length > 0 && (
+              <>
+                <h3>{section.factsLabel || "Formula sheet"}</h3>
+                <table className="eq-table">
+                  <tbody>{section.keyEquations.map((e, i) => (
+                    <tr key={i}><td className="name">{e.name}</td><td className="formula">{e.formula}</td><td className="where">{e.where}</td></tr>
+                  ))}</tbody>
+                </table>
+              </>
+            )}
             <h3 className="mt-lg">Worked solutions</h3>
             {section.practiceProblems.map((q, i) => (
               <div key={q.id} className="q-card">

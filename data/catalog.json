@@ -8,6 +8,13 @@
       "color": "#2563eb"
     },
     {
+      "id": "ppl",
+      "title": "Private Pilot (PPL)",
+      "status": "available",
+      "blurb": "FAA Private Pilot Certificate \u2014 the full path plus ground school with diagrams, links, and practice.",
+      "color": "#0ea5e9"
+    },
+    {
       "id": "fe-civil",
       "title": "FE Civil",
       "status": "coming-soon",
