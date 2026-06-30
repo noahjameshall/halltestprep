@@ -1,0 +1,2564 @@
+{
+  "id": "fe-mechanical",
+  "title": "FE Mechanical",
+  "subtitle": "Fundamentals of Engineering - Computer-Based Test",
+  "tagline": "Everything you need to pass the FE Mechanical exam: structured lessons, worked practice, quizzes, and full practice tests across all 14 knowledge areas.",
+  "examFacts": {
+    "questions": 110,
+    "hours": 6,
+    "areas": 14,
+    "handbook": "NCEES FE Reference Handbook",
+    "passNote": "No fixed passing percentage - NCEES uses a criterion-referenced cut score (community estimates around 50-60% correct). No penalty for wrong answers, so never leave a blank."
+  },
+  "priceMonthly": 10,
+  "priceOneTime": 100,
+  "sections": [
+    {
+      "id": "math",
+      "title": "Mathematics",
+      "questions": "6-9",
+      "weight": "~7%",
+      "priority": "High",
+      "guide": {
+        "overview": "Mathematics is the toolkit every other section borrows from: analytic geometry, vectors, calculus (derivatives, integrals, basic differential equations), and linear algebra. On the FE you rarely derive anything — you recognize the form and execute fast.",
+        "objectives": [
+          "Work fluently with vectors: components, dot and cross products, magnitudes and angles.",
+          "Differentiate and integrate standard functions; apply the chain, product, and quotient rules.",
+          "Recognize and solve first-order and simple second-order differential equations.",
+          "Solve small linear systems using substitution, Cramer's rule, or matrices."
+        ],
+        "prereqs": "Algebra, trigonometry, and the standard calculus sequence.",
+        "watchOuts": [
+          "Radians vs. degrees — set your calculator correctly before trig.",
+          "Dropping the constant of integration when an initial condition is given.",
+          "Cross product gives a vector (with direction); dot product gives a scalar.",
+          "Sign errors when resolving vectors into components."
+        ]
+      },
+      "keyEquations": [
+        {
+          "name": "Dot product",
+          "formula": "A.B = |A||B|cos(t) = AxBx + AyBy + AzBz",
+          "where": "Vectors"
+        },
+        {
+          "name": "Cross product magnitude",
+          "formula": "|AxB| = |A||B|sin(t)",
+          "where": "Vectors"
+        },
+        {
+          "name": "Derivative of product",
+          "formula": "(uv)' = u'v + uv'",
+          "where": "Differential Calculus"
+        },
+        {
+          "name": "Integration by parts",
+          "formula": "INT u dv = uv - INT v du",
+          "where": "Integral Calculus"
+        },
+        {
+          "name": "Quadratic formula",
+          "formula": "x = (-b +/- sqrt(b^2-4ac)) / 2a",
+          "where": "Algebra"
+        }
+      ],
+      "lesson": [
+        {
+          "heading": "Vectors are your workhorse",
+          "body": "A vector has magnitude and direction. Resolve it into components with Ax = A cos(t) and Ay = A sin(t), then recombine with |A| = sqrt(Ax^2+Ay^2) and t = atan2(Ay, Ax). The dot product A.B = |A||B|cos(t) tells you how aligned two vectors are (zero means perpendicular). The cross product AxB is perpendicular to both, with magnitude |A||B|sin(t) - used constantly for moments (M = r x F) and areas."
+        },
+        {
+          "heading": "Calculus you actually need",
+          "body": "Memorize the derivative and integral of polynomials, exponentials, logs, and the six trig functions. The chain rule d/dx f(g(x)) = f'(g)*g'(x) shows up everywhere. For integrals, recognize the form first: power rule, u-substitution, or integration by parts. Definite integrals give area, accumulated change, average value, and centroids."
+        },
+        {
+          "heading": "Differential equations on the FE",
+          "body": "Most FE ODEs are first-order linear (dy/dx + Py = Q) or separable. For y' = ky the solution is y = y0*e^(kt) - growth/decay. Simple second-order constant-coefficient equations (ay'' + by' + cy = 0) are solved with the characteristic equation a*r^2+b*r+c = 0; the roots tell you whether the response is overdamped, critically damped, or oscillatory."
+        },
+        {
+          "heading": "Linear algebra, fast",
+          "body": "For 2x2 and 3x3 systems, Cramer's rule is quick: x_i = det(A_i)/det(A). The determinant of a 2x2 [[a,b],[c,d]] is ad - bc. A zero determinant means no unique solution. Matrix multiplication is row-times-column; it is not commutative."
+        }
+      ],
+      "practiceProblems": [
+        {
+          "id": "math-p1",
+          "prompt": "Given A = 3i + 4j and B = 1i + 2j, find A.B (the dot product).",
+          "choices": [
+            "7",
+            "11",
+            "10",
+            "5"
+          ],
+          "answer": 1,
+          "explanation": "Dot product = AxBx + AyBy = (3)(1) + (4)(2) = 3 + 8 = 11. Remember the dot product returns a scalar."
+        },
+        {
+          "id": "math-p2",
+          "prompt": "What is the derivative of f(x) = x^2 * sin(x)?",
+          "choices": [
+            "2x*cos(x)",
+            "2x*sin(x) + x^2*cos(x)",
+            "x^2*cos(x)",
+            "2x*sin(x) - x^2*cos(x)"
+          ],
+          "answer": 1,
+          "explanation": "Use the product rule (uv)' = u'v + uv'. With u = x^2 (u' = 2x) and v = sin(x) (v' = cos x): f' = 2x*sin(x) + x^2*cos(x)."
+        },
+        {
+          "id": "math-p3",
+          "prompt": "Evaluate the definite integral of 3x^2 from 0 to 2.",
+          "choices": [
+            "6",
+            "8",
+            "12",
+            "4"
+          ],
+          "answer": 1,
+          "explanation": "The antiderivative of 3x^2 is x^3. Evaluate from 0 to 2: (2)^3 - (0)^3 = 8."
+        },
+        {
+          "id": "math-p4",
+          "prompt": "The general solution of dy/dt = 0.5y is:",
+          "choices": [
+            "y = 0.5t + C",
+            "y = y0*e^(0.5t)",
+            "y = e^0.5 * t",
+            "y = 0.5e^t"
+          ],
+          "answer": 1,
+          "explanation": "This is exponential growth: dy/dt = ky gives y = y0*e^(kt). Here k = 0.5, so y = y0*e^(0.5t)."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "math-q1",
+          "prompt": "|AxB| for |A|=5, |B|=2, angle 30 deg between them:",
+          "choices": [
+            "5",
+            "10",
+            "8.66",
+            "2.5"
+          ],
+          "answer": 0,
+          "explanation": "|AxB| = |A||B|sin(t) = 5*2*sin(30) = 10*0.5 = 5."
+        },
+        {
+          "id": "math-q2",
+          "prompt": "The determinant of [[2,1],[4,3]] is:",
+          "choices": [
+            "2",
+            "10",
+            "6",
+            "-2"
+          ],
+          "answer": 0,
+          "explanation": "det = ad - bc = (2)(3) - (1)(4) = 6 - 4 = 2."
+        },
+        {
+          "id": "math-q3",
+          "prompt": "d/dx [ln(3x)] =",
+          "choices": [
+            "1/(3x)",
+            "3/x",
+            "1/x",
+            "3"
+          ],
+          "answer": 2,
+          "explanation": "d/dx ln(3x) = (1/3x)*3 = 1/x by the chain rule."
+        },
+        {
+          "id": "math-q4",
+          "prompt": "The integral of cos(x) dx =",
+          "choices": [
+            "-sin(x)+C",
+            "sin(x)+C",
+            "-cos(x)+C",
+            "tan(x)+C"
+          ],
+          "answer": 1,
+          "explanation": "The antiderivative of cos(x) is sin(x) + C."
+        }
+      ]
+    },
+    {
+      "id": "prob-stats",
+      "title": "Probability & Statistics",
+      "questions": "4-6",
+      "weight": "~5%",
+      "priority": "Medium",
+      "guide": {
+        "overview": "A compact, high-yield section: descriptive statistics (mean, median, standard deviation), basic probability rules, and the normal distribution. Most problems are plug-and-chug if you know which formula to grab.",
+        "objectives": [
+          "Compute mean, median, mode, variance, and standard deviation.",
+          "Apply addition and multiplication rules; handle independent and mutually exclusive events.",
+          "Use the normal distribution and z-scores.",
+          "Recognize permutations vs. combinations."
+        ],
+        "prereqs": "Basic algebra and summation notation.",
+        "watchOuts": [
+          "Population vs. sample standard deviation (dividing by N vs. N-1).",
+          "Confusing 'and' (multiply) with 'or' (add) in probability.",
+          "Permutations count order; combinations do not."
+        ]
+      },
+      "keyEquations": [
+        {
+          "name": "Mean",
+          "formula": "xbar = (sum of xi)/n",
+          "where": "Statistics"
+        },
+        {
+          "name": "Sample std dev",
+          "formula": "s = sqrt[ sum(xi-xbar)^2 / (n-1) ]",
+          "where": "Statistics"
+        },
+        {
+          "name": "Addition rule",
+          "formula": "P(A or B) = P(A)+P(B)-P(A and B)",
+          "where": "Probability"
+        },
+        {
+          "name": "Combinations",
+          "formula": "C(n,r) = n! / [r!(n-r)!]",
+          "where": "Probability"
+        },
+        {
+          "name": "z-score",
+          "formula": "z = (x - mu)/sigma",
+          "where": "Normal Distribution"
+        }
+      ],
+      "lesson": [
+        {
+          "heading": "Describing data",
+          "body": "The mean is the average; the median is the middle value (robust to outliers); the mode is most frequent. Standard deviation measures spread. Use n-1 in the denominator for a sample, n for a full population - the FE usually specifies. Variance is the square of standard deviation."
+        },
+        {
+          "heading": "Probability rules",
+          "body": "For 'or' events use the addition rule P(A or B) = P(A)+P(B)-P(A and B); if mutually exclusive the overlap is zero. For 'and' with independent events, multiply: P(A and B) = P(A)P(B). Conditional probability is P(A|B) = P(A and B)/P(B)."
+        },
+        {
+          "heading": "Counting",
+          "body": "Permutations P(n,r) = n!/(n-r)! count ordered arrangements. Combinations C(n,r) = n!/[r!(n-r)!] count selections where order does not matter. Ask yourself: does swapping two items create a new outcome? If yes, permutation."
+        },
+        {
+          "heading": "The normal distribution",
+          "body": "Convert any value to a z-score z = (x-mu)/sigma, then read the standard-normal table (provided in the handbook). Remember the 68-95-99.7 rule: about 68% of data lies within +/-1 sigma, 95% within +/-2 sigma, 99.7% within +/-3 sigma."
+        }
+      ],
+      "practiceProblems": [
+        {
+          "id": "ps-p1",
+          "prompt": "Find the mean of 4, 8, 10, 14.",
+          "choices": [
+            "9",
+            "8",
+            "10",
+            "11"
+          ],
+          "answer": 0,
+          "explanation": "Mean = (4+8+10+14)/4 = 36/4 = 9."
+        },
+        {
+          "id": "ps-p2",
+          "prompt": "A fair die is rolled. P(rolling a 2 OR a 5)?",
+          "choices": [
+            "1/6",
+            "1/3",
+            "1/2",
+            "2/3"
+          ],
+          "answer": 1,
+          "explanation": "Mutually exclusive events: P = 1/6 + 1/6 = 2/6 = 1/3."
+        },
+        {
+          "id": "ps-p3",
+          "prompt": "How many ways to choose 2 people from 5 (order doesn't matter)?",
+          "choices": [
+            "10",
+            "20",
+            "25",
+            "5"
+          ],
+          "answer": 0,
+          "explanation": "Combination C(5,2) = 5!/(2!*3!) = (5*4)/(2*1) = 10."
+        },
+        {
+          "id": "ps-p4",
+          "prompt": "For mu=50, sigma=5, what is the z-score of x=60?",
+          "choices": [
+            "1",
+            "2",
+            "0.5",
+            "10"
+          ],
+          "answer": 1,
+          "explanation": "z = (x-mu)/sigma = (60-50)/5 = 2. The value is two standard deviations above the mean."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ps-q1",
+          "prompt": "Two independent events have P(A)=0.4, P(B)=0.5. P(A and B)?",
+          "choices": [
+            "0.9",
+            "0.2",
+            "0.1",
+            "0.45"
+          ],
+          "answer": 1,
+          "explanation": "Independent 'and' means multiply: 0.4 * 0.5 = 0.2."
+        },
+        {
+          "id": "ps-q2",
+          "prompt": "The median of 3, 7, 9, 12, 100 is:",
+          "choices": [
+            "26.2",
+            "9",
+            "12",
+            "7"
+          ],
+          "answer": 1,
+          "explanation": "Median is the middle of the sorted list: 9. It is unaffected by the outlier 100."
+        },
+        {
+          "id": "ps-q3",
+          "prompt": "Variance is:",
+          "choices": [
+            "the square root of std dev",
+            "the square of std dev",
+            "the mean of squares",
+            "the range"
+          ],
+          "answer": 1,
+          "explanation": "Variance = (standard deviation)^2."
+        },
+        {
+          "id": "ps-q4",
+          "prompt": "Permutations differ from combinations because they:",
+          "choices": [
+            "use factorials",
+            "count order",
+            "ignore order",
+            "require replacement"
+          ],
+          "answer": 1,
+          "explanation": "Permutations count ordered arrangements; combinations ignore order."
+        }
+      ]
+    },
+    {
+      "id": "ethics",
+      "title": "Ethics & Professional Practice",
+      "questions": "3-5",
+      "weight": "~4%",
+      "priority": "High (easy points)",
+      "guide": {
+        "overview": "Pure points if you internalize one principle: the engineer's paramount duty is to protect public health, safety, and welfare. Questions test the NCEES/NSPE code, professional obligations, conflicts of interest, and basic agency ideas.",
+        "objectives": [
+          "State the engineer's paramount obligation (public safety).",
+          "Identify conflicts of interest and how to handle them.",
+          "Apply rules on competence, confidentiality, and honest representation.",
+          "Recognize when to act as a faithful agent or trustee."
+        ],
+        "prereqs": "None - read the NSPE Code of Ethics once.",
+        "watchOuts": [
+          "When in doubt, the answer almost always protects the public.",
+          "Engineers must only work in their area of competence.",
+          "Disclose conflicts of interest; never accept gifts that compromise judgment."
+        ]
+      },
+      "keyEquations": [
+        {
+          "name": "Paramount duty",
+          "formula": "Public health, safety & welfare > client/employer interest",
+          "where": "NSPE Code"
+        },
+        {
+          "name": "Competence",
+          "formula": "Practice only in areas of qualification",
+          "where": "NSPE Code"
+        }
+      ],
+      "lesson": [
+        {
+          "heading": "The hierarchy of obligations",
+          "body": "Engineers hold paramount the safety, health, and welfare of the public. This outranks duty to client, employer, and self. If an exam answer pits 'finish on schedule' or 'save the client money' against 'public safety,' choose public safety every time."
+        },
+        {
+          "heading": "Competence and honesty",
+          "body": "Perform services only in your areas of competence. Issue public statements only in an objective and truthful manner. Avoid deceptive acts. Sign and seal only work you have prepared or directly supervised."
+        },
+        {
+          "heading": "Conflicts of interest",
+          "body": "Disclose all known or potential conflicts to clients or employers. Do not accept compensation from more than one party for the same project unless all parties consent. Do not accept gifts or favors that could influence professional judgment."
+        },
+        {
+          "heading": "Faithful agent",
+          "body": "Act for each employer or client as a faithful agent or trustee. Keep client information confidential. Do not solicit or accept work on a contingent basis that would compromise judgment."
+        }
+      ],
+      "practiceProblems": [
+        {
+          "id": "eth-p1",
+          "prompt": "An engineer discovers a design flaw that could endanger the public, but fixing it will delay the project. The engineer should:",
+          "choices": [
+            "Stay silent to meet the deadline",
+            "Report the flaw and ensure it is addressed",
+            "Wait until after launch",
+            "Ask for a bonus first"
+          ],
+          "answer": 1,
+          "explanation": "Public safety is paramount and outranks schedule. The engineer must report and ensure the flaw is corrected."
+        },
+        {
+          "id": "eth-p2",
+          "prompt": "An engineer is asked to stamp drawings prepared by someone they did not supervise. They should:",
+          "choices": [
+            "Stamp them to be helpful",
+            "Refuse unless they reviewed/supervised the work",
+            "Stamp for a fee",
+            "Stamp only structural sheets"
+          ],
+          "answer": 1,
+          "explanation": "Engineers may seal only work they prepared or directly supervised. Stamping unreviewed work is unethical."
+        },
+        {
+          "id": "eth-p3",
+          "prompt": "Accepting a valuable gift from a vendor bidding on your project is:",
+          "choices": [
+            "Fine if under $100",
+            "A conflict of interest to avoid or disclose",
+            "Standard practice",
+            "Acceptable if the bid is lowest"
+          ],
+          "answer": 1,
+          "explanation": "Gifts that could influence judgment create a conflict of interest and must be avoided or disclosed."
+        },
+        {
+          "id": "eth-p4",
+          "prompt": "An engineer is offered a project outside their expertise. The ethical action is:",
+          "choices": [
+            "Take it and learn as you go",
+            "Decline or associate with a qualified expert",
+            "Subcontract secretly",
+            "Take it for the fee"
+          ],
+          "answer": 1,
+          "explanation": "Engineers must work only within their competence - decline or bring in qualified expertise."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "eth-q1",
+          "prompt": "The engineer's paramount duty is to:",
+          "choices": [
+            "the employer",
+            "the public's safety, health & welfare",
+            "the client's budget",
+            "the profession"
+          ],
+          "answer": 1,
+          "explanation": "Protecting public health, safety, and welfare is the paramount obligation."
+        },
+        {
+          "id": "eth-q2",
+          "prompt": "Confidential client information should be:",
+          "choices": [
+            "shared with competitors",
+            "kept confidential",
+            "published",
+            "sold"
+          ],
+          "answer": 1,
+          "explanation": "Engineers act as faithful agents and keep client information confidential."
+        },
+        {
+          "id": "eth-q3",
+          "prompt": "Public statements by engineers must be:",
+          "choices": [
+            "persuasive",
+            "objective and truthful",
+            "optimistic",
+            "brief"
+          ],
+          "answer": 1,
+          "explanation": "Engineers must be objective and truthful in public statements."
+        },
+        {
+          "id": "eth-q4",
+          "prompt": "Working outside your area of competence is:",
+          "choices": [
+            "encouraged",
+            "a code violation",
+            "fine with disclosure only",
+            "required for growth"
+          ],
+          "answer": 1,
+          "explanation": "Practicing outside your competence violates the code unless you associate with qualified experts."
+        }
+      ]
+    },
+    {
+      "id": "econ",
+      "title": "Engineering Economics",
+      "questions": "4-6",
+      "weight": "~5%",
+      "priority": "High (easy points)",
+      "guide": {
+        "overview": "Time value of money. Master the factor notation in the handbook and these become near-automatic: present worth, future worth, annuities, and simple comparisons. High reward for low effort.",
+        "objectives": [
+          "Move money across time with P, F, and A factors.",
+          "Read and apply the (F/P, i, n) style factor tables.",
+          "Compare alternatives using present worth and annual cost.",
+          "Handle simple vs. compound interest and effective rates."
+        ],
+        "prereqs": "Algebra and exponentials.",
+        "watchOuts": [
+          "Match the interest rate period to the number of periods (monthly i with monthly n).",
+          "Effective annual rate is not the nominal rate when compounding more than once a year.",
+          "Read whether a value is given as present (now) or future (later)."
+        ]
+      },
+      "keyEquations": [
+        {
+          "name": "Single payment compound",
+          "formula": "F = P(1+i)^n",
+          "where": "Eng. Economics"
+        },
+        {
+          "name": "Present worth",
+          "formula": "P = F(1+i)^-n",
+          "where": "Eng. Economics"
+        },
+        {
+          "name": "Sinking fund",
+          "formula": "A = F * [ i / ((1+i)^n - 1) ]",
+          "where": "Eng. Economics"
+        },
+        {
+          "name": "Capital recovery",
+          "formula": "A = P * [ i(1+i)^n / ((1+i)^n - 1) ]",
+          "where": "Eng. Economics"
+        },
+        {
+          "name": "Effective annual rate",
+          "formula": "i_eff = (1 + r/m)^m - 1",
+          "where": "Eng. Economics"
+        }
+      ],
+      "lesson": [
+        {
+          "heading": "The core idea: money has a time value",
+          "body": "A dollar today is worth more than a dollar later because it can earn interest. Every problem is about shifting cash flows to a common point in time - usually 'now' (present worth P) or 'the end' (future worth F) - using the interest rate i and number of periods n."
+        },
+        {
+          "heading": "Single payments",
+          "body": "To push a present amount forward: F = P(1+i)^n. To pull a future amount back: P = F(1+i)^-n. The FE handbook lists these as factors written (F/P, i%, n) and (P/F, i%, n) - you just multiply the known amount by the tabulated factor."
+        },
+        {
+          "heading": "Uniform series (annuities)",
+          "body": "When equal payments A occur each period, use the capital-recovery factor to convert a present amount into payments (A/P), or the sinking-fund factor to build a future amount (A/F). Loan payments, depreciation, and recurring costs all use these."
+        },
+        {
+          "heading": "Comparing alternatives",
+          "body": "Bring every option's cash flows to the same basis - present worth or equivalent annual cost - then pick the better number (lowest cost or highest worth). Make sure compounding periods match the payment periods before you compute."
+        }
+      ],
+      "practiceProblems": [
+        {
+          "id": "econ-p1",
+          "prompt": "You invest $1,000 at 6% annual compound interest for 5 years. Future value?",
+          "choices": [
+            "$1,300",
+            "$1,338",
+            "$1,500",
+            "$1,060"
+          ],
+          "answer": 1,
+          "explanation": "F = P(1+i)^n = 1000(1.06)^5 = 1000(1.3382) = $1,338."
+        },
+        {
+          "id": "econ-p2",
+          "prompt": "What is the present worth of $5,000 received 4 years from now at 8%?",
+          "choices": [
+            "$3,675",
+            "$4,200",
+            "$3,403",
+            "$4,630"
+          ],
+          "answer": 0,
+          "explanation": "P = F(1+i)^-n = 5000/(1.08)^4 = 5000/1.3605 = $3,675."
+        },
+        {
+          "id": "econ-p3",
+          "prompt": "A nominal 12% rate compounded monthly has an effective annual rate of about:",
+          "choices": [
+            "12.0%",
+            "12.68%",
+            "13.2%",
+            "11.4%"
+          ],
+          "answer": 1,
+          "explanation": "i_eff = (1 + 0.12/12)^12 - 1 = (1.01)^12 - 1 = 0.1268 = 12.68%."
+        },
+        {
+          "id": "econ-p4",
+          "prompt": "Simple interest on $2,000 at 5% for 3 years equals:",
+          "choices": [
+            "$300",
+            "$315",
+            "$100",
+            "$30"
+          ],
+          "answer": 0,
+          "explanation": "Simple interest I = P*i*n = 2000(0.05)(3) = $300 (no compounding)."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "econ-q1",
+          "prompt": "F = P(1+i)^n converts:",
+          "choices": [
+            "future to present",
+            "present to future",
+            "annuity to present",
+            "rate to period"
+          ],
+          "answer": 1,
+          "explanation": "It pushes a present amount P forward to a future amount F."
+        },
+        {
+          "id": "econ-q2",
+          "prompt": "If compounding is monthly, n for 3 years is:",
+          "choices": [
+            "3",
+            "12",
+            "36",
+            "30"
+          ],
+          "answer": 2,
+          "explanation": "Monthly periods over 3 years: 3 * 12 = 36."
+        },
+        {
+          "id": "econ-q3",
+          "prompt": "To compare two projects fairly you should:",
+          "choices": [
+            "use different rates",
+            "bring cash flows to a common time basis",
+            "ignore time",
+            "use only first cost"
+          ],
+          "answer": 1,
+          "explanation": "Convert all cash flows to a common basis (present worth or annual cost) before comparing."
+        },
+        {
+          "id": "econ-q4",
+          "prompt": "Effective annual rate exceeds nominal rate when:",
+          "choices": [
+            "compounding is annual",
+            "compounding is more than once per year",
+            "rate is zero",
+            "n is one"
+          ],
+          "answer": 1,
+          "explanation": "More frequent compounding raises the effective rate above the nominal rate."
+        }
+      ]
+    },
+    {
+      "id": "electrical",
+      "title": "Electricity & Magnetism",
+      "questions": "5-8",
+      "weight": "~7%",
+      "priority": "Medium-High",
+      "guide": {
+        "overview": "DC and basic AC circuits: Ohm's law, series/parallel resistance, Kirchhoff's laws, power, capacitors and inductors, and simple AC impedance. Mechanical candidates often under-study this - don't.",
+        "objectives": [
+          "Apply Ohm's law and the power relations.",
+          "Reduce series and parallel resistor networks.",
+          "Use Kirchhoff's voltage and current laws.",
+          "Handle capacitor/inductor energy and basic AC impedance."
+        ],
+        "prereqs": "Algebra and complex numbers for AC.",
+        "watchOuts": [
+          "Resistors in parallel: the equivalent is smaller than the smallest resistor.",
+          "Watch units: mA, kOhm, microF.",
+          "In AC, use RMS values for power unless told otherwise."
+        ]
+      },
+      "keyEquations": [
+        {
+          "name": "Ohm's law",
+          "formula": "V = IR",
+          "where": "Circuits"
+        },
+        {
+          "name": "Power",
+          "formula": "P = VI = I^2 R = V^2/R",
+          "where": "Circuits"
+        },
+        {
+          "name": "Parallel resistance",
+          "formula": "1/Req = 1/R1 + 1/R2 + ...",
+          "where": "Circuits"
+        },
+        {
+          "name": "Capacitor energy",
+          "formula": "E = 0.5 C V^2",
+          "where": "Circuits"
+        },
+        {
+          "name": "Capacitive reactance",
+          "formula": "Xc = 1/(2 pi f C)",
+          "where": "AC Circuits"
+        }
+      ],
+      "lesson": [
+        {
+          "heading": "Ohm's law and power",
+          "body": "The foundation: V = IR. Power dissipated by a resistor is P = VI, and by substitution P = I^2 R = V^2/R. Pick the form that uses the quantities you already know."
+        },
+        {
+          "heading": "Combining resistors",
+          "body": "In series, resistances add: Req = R1 + R2 + ... and the same current flows through each. In parallel, 1/Req = sum(1/Ri) and the same voltage appears across each; the equivalent is always less than the smallest branch. For two parallel resistors, Req = R1*R2/(R1+R2)."
+        },
+        {
+          "heading": "Kirchhoff's laws",
+          "body": "KCL: the sum of currents into a node equals the sum out (charge is conserved). KVL: around any closed loop the voltage rises equal the drops (energy is conserved). These let you solve any network too complex for simple series/parallel reduction."
+        },
+        {
+          "heading": "Energy storage and AC",
+          "body": "A capacitor stores E = 0.5 C V^2; an inductor stores E = 0.5 L I^2. In AC circuits, capacitors and inductors present frequency-dependent reactance: Xc = 1/(2 pi f C) and Xl = 2 pi f L. Impedance Z combines resistance and reactance as a complex quantity, and power calculations use RMS values."
+        }
+      ],
+      "practiceProblems": [
+        {
+          "id": "elec-p1",
+          "prompt": "A 12 V source drives a 4 Ohm resistor. The current is:",
+          "choices": [
+            "48 A",
+            "3 A",
+            "0.33 A",
+            "16 A"
+          ],
+          "answer": 1,
+          "explanation": "Ohm's law: I = V/R = 12/4 = 3 A."
+        },
+        {
+          "id": "elec-p2",
+          "prompt": "Two resistors, 6 Ohm and 3 Ohm, in parallel give:",
+          "choices": [
+            "9 Ohm",
+            "2 Ohm",
+            "4.5 Ohm",
+            "0.5 Ohm"
+          ],
+          "answer": 1,
+          "explanation": "Req = R1*R2/(R1+R2) = (6*3)/(6+3) = 18/9 = 2 Ohm. Always less than the smaller resistor."
+        },
+        {
+          "id": "elec-p3",
+          "prompt": "Power dissipated by a 10 Ohm resistor carrying 2 A:",
+          "choices": [
+            "20 W",
+            "40 W",
+            "5 W",
+            "100 W"
+          ],
+          "answer": 1,
+          "explanation": "P = I^2 R = (2)^2 (10) = 4*10 = 40 W."
+        },
+        {
+          "id": "elec-p4",
+          "prompt": "Energy stored in a 100 microF capacitor charged to 50 V:",
+          "choices": [
+            "0.125 J",
+            "2.5 J",
+            "0.25 J",
+            "5 J"
+          ],
+          "answer": 0,
+          "explanation": "E = 0.5 C V^2 = 0.5(100e-6)(50^2) = 0.5(1e-4)(2500) = 0.125 J."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "elec-q1",
+          "prompt": "Resistors in series:",
+          "choices": [
+            "add reciprocals",
+            "add directly",
+            "always reduce below smallest",
+            "share voltage equally"
+          ],
+          "answer": 1,
+          "explanation": "Series resistances add directly: Req = R1 + R2 + ..."
+        },
+        {
+          "id": "elec-q2",
+          "prompt": "KCL is a statement of conservation of:",
+          "choices": [
+            "energy",
+            "charge",
+            "voltage",
+            "power"
+          ],
+          "answer": 1,
+          "explanation": "Kirchhoff's current law conserves charge at a node."
+        },
+        {
+          "id": "elec-q3",
+          "prompt": "Capacitive reactance Xc as frequency increases:",
+          "choices": [
+            "increases",
+            "decreases",
+            "stays constant",
+            "becomes infinite"
+          ],
+          "answer": 1,
+          "explanation": "Xc = 1/(2 pi f C) - it decreases as frequency rises."
+        },
+        {
+          "id": "elec-q4",
+          "prompt": "For a 9 V battery and 3 Ohm resistor, power delivered is:",
+          "choices": [
+            "3 W",
+            "27 W",
+            "12 W",
+            "81 W"
+          ],
+          "answer": 1,
+          "explanation": "P = V^2/R = 81/3 = 27 W."
+        }
+      ]
+    },
+    {
+      "id": "statics",
+      "title": "Statics",
+      "questions": "9-14",
+      "weight": "~10%",
+      "priority": "Very High",
+      "guide": {
+        "overview": "Bodies in equilibrium: force resultants, free-body diagrams, equilibrium of rigid bodies, trusses and frames, centroids and moments of inertia, and friction. One of the largest buckets and the foundation of the solid-mechanics chapters.",
+        "objectives": [
+          "Resolve forces into components; find resultants and moments.",
+          "Draw correct free-body diagrams and write equilibrium equations.",
+          "Solve trusses by joints and sections; analyze frames and machines.",
+          "Locate centroids and compute moments of inertia (including parallel-axis).",
+          "Apply static friction (impending motion, F = mu*N)."
+        ],
+        "prereqs": "Vectors and trigonometry. Precise free-body diagrams are the whole game.",
+        "watchOuts": [
+          "Incomplete or wrong free-body diagrams (missing a reaction or force).",
+          "Moment sign/direction errors; wrong moment arm (perpendicular distance).",
+          "Assuming friction is at maximum when motion isn't actually impending.",
+          "Forgetting the parallel-axis term when shifting moment of inertia."
+        ]
+      },
+      "keyEquations": [
+        {
+          "name": "Equilibrium (2D)",
+          "formula": "sum Fx = 0, sum Fy = 0, sum M = 0",
+          "where": "Statics - Equilibrium"
+        },
+        {
+          "name": "Moment",
+          "formula": "M = F*d (d = perpendicular distance)",
+          "where": "Statics - Moments"
+        },
+        {
+          "name": "Parallel-axis theorem",
+          "formula": "I = Ic + A*d^2",
+          "where": "Moments of Inertia"
+        },
+        {
+          "name": "Static friction",
+          "formula": "F <= mu_s * N (max at impending motion)",
+          "where": "Friction"
+        },
+        {
+          "name": "Composite centroid",
+          "formula": "xbar = sum(xi*Ai)/sum(Ai)",
+          "where": "Centroids"
+        }
+      ],
+      "lesson": [
+        {
+          "heading": "Everything starts with a free-body diagram",
+          "body": "Isolate the body, draw every external force and reaction acting on it, and label known dimensions. Most statics errors are FBD errors - a missing reaction, a force in the wrong direction, or a mislabeled angle. Get the FBD right and the three equilibrium equations (sum Fx = 0, sum Fy = 0, sum M = 0) usually finish the problem."
+        },
+        {
+          "heading": "Moments and the smart pivot",
+          "body": "A moment is force times perpendicular distance: M = F*d. Choose your moment center wisely - summing moments about a point where an unknown acts eliminates that unknown from the equation, often solving for a reaction in one step."
+        },
+        {
+          "heading": "Trusses and frames",
+          "body": "For trusses, use the method of joints when a joint has 2 or fewer unknown member forces, or the method of sections (cut through 3 or fewer members) when you want a specific member directly. Two-force members carry force only along their length. Frames and machines have multi-force members; analyze each member with its own FBD."
+        },
+        {
+          "heading": "Centroids, inertia, and friction",
+          "body": "For composite areas, xbar = sum(xi*Ai)/sum(Ai). To find moment of inertia about a non-centroidal axis, add the transfer term: I = Ic + A*d^2. For friction, the resisting force can be anything up to F_max = mu_s*N - it only equals mu_s*N at impending motion, so don't assume maximum friction unless the problem says sliding is about to start."
+        }
+      ],
+      "practiceProblems": [
+        {
+          "id": "stat-p1",
+          "prompt": "A 10 m simply-supported beam carries a 200 N load 3 m from the left support A. Find R_A.",
+          "choices": [
+            "60 N",
+            "140 N",
+            "100 N",
+            "200 N"
+          ],
+          "answer": 1,
+          "explanation": "Sum moments about B: R_A(10) - 200(10-3) = 0, so R_A(10) = 1400 and R_A = 140 N. (R_B = 60 N by sum Fy.)"
+        },
+        {
+          "id": "stat-p2",
+          "prompt": "A 100 N block sits on a surface with mu_s = 0.3. Horizontal force to initiate motion?",
+          "choices": [
+            "3 N",
+            "30 N",
+            "300 N",
+            "33 N"
+          ],
+          "answer": 1,
+          "explanation": "Normal force N = 100 N. F_max = mu_s*N = 0.3 * 100 = 30 N."
+        },
+        {
+          "id": "stat-p3",
+          "prompt": "A force of 50 N acts 0.4 m from a pivot, perpendicular. The moment is:",
+          "choices": [
+            "12.5 N*m",
+            "20 N*m",
+            "125 N*m",
+            "50 N*m"
+          ],
+          "answer": 1,
+          "explanation": "M = F*d = 50 * 0.4 = 20 N*m."
+        },
+        {
+          "id": "stat-p4",
+          "prompt": "Moment of inertia of an area is shifted a distance d from the centroid. You must add:",
+          "choices": [
+            "A*d",
+            "A*d^2",
+            "Ic*d",
+            "d^2/A"
+          ],
+          "answer": 1,
+          "explanation": "Parallel-axis theorem: I = Ic + A*d^2. The transfer term is the area times distance squared."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "stat-q1",
+          "prompt": "For 2D equilibrium, how many independent equations are available?",
+          "choices": [
+            "1",
+            "2",
+            "3",
+            "6"
+          ],
+          "answer": 2,
+          "explanation": "Three: sum Fx = 0, sum Fy = 0, and sum M = 0."
+        },
+        {
+          "id": "stat-q2",
+          "prompt": "A two-force member carries force:",
+          "choices": [
+            "perpendicular to its length",
+            "along its length",
+            "at 45 degrees",
+            "as a couple"
+          ],
+          "answer": 1,
+          "explanation": "Two-force members carry force only along the line connecting the two pins."
+        },
+        {
+          "id": "stat-q3",
+          "prompt": "Method of sections works best by cutting through at most:",
+          "choices": [
+            "1 member",
+            "2 members",
+            "3 members",
+            "4 members"
+          ],
+          "answer": 2,
+          "explanation": "Cut through 3 or fewer members so the three equilibrium equations can solve them."
+        },
+        {
+          "id": "stat-q4",
+          "prompt": "Static friction force before impending motion is:",
+          "choices": [
+            "exactly mu*N",
+            "less than or equal to mu*N",
+            "greater than mu*N",
+            "zero"
+          ],
+          "answer": 1,
+          "explanation": "Friction is <= mu_s*N and only reaches mu_s*N at impending motion."
+        }
+      ]
+    },
+    {
+      "id": "dynamics",
+      "title": "Dynamics, Kinematics & Vibrations",
+      "questions": "9-14",
+      "weight": "~10%",
+      "priority": "Very High",
+      "guide": {
+        "overview": "Motion and its causes: kinematics (position, velocity, acceleration), Newton's second law, work-energy and impulse-momentum methods, and simple harmonic vibration. Decide early whether energy or momentum is the faster route.",
+        "objectives": [
+          "Relate position, velocity, and acceleration (constant and variable a).",
+          "Apply sum F = ma and the work-energy theorem.",
+          "Use impulse-momentum and conservation of momentum.",
+          "Analyze simple harmonic motion and natural frequency."
+        ],
+        "prereqs": "Statics (free-body diagrams), calculus (v = dx/dt), and energy concepts.",
+        "watchOuts": [
+          "Mixing up average and instantaneous quantities.",
+          "Forgetting that work-energy is a scalar method (no directions to track).",
+          "Sign conventions in momentum (velocity direction matters)."
+        ]
+      },
+      "keyEquations": [
+        {
+          "name": "Constant acceleration",
+          "formula": "v = v0 + at;  v^2 = v0^2 + 2a(dx)",
+          "where": "Kinematics"
+        },
+        {
+          "name": "Newton's second law",
+          "formula": "sum F = ma",
+          "where": "Dynamics"
+        },
+        {
+          "name": "Work-energy",
+          "formula": "W = dKE = 0.5 m (v^2 - v0^2)",
+          "where": "Energy Methods"
+        },
+        {
+          "name": "Impulse-momentum",
+          "formula": "F*dt = m*dv",
+          "where": "Momentum"
+        },
+        {
+          "name": "Natural frequency",
+          "formula": "wn = sqrt(k/m)",
+          "where": "Vibrations"
+        }
+      ],
+      "lesson": [
+        {
+          "heading": "Kinematics first",
+          "body": "If acceleration is constant, use v = v0 + at, dx = v0*t + 0.5*a*t^2, and v^2 = v0^2 + 2a*dx. If acceleration varies, fall back to calculus: v = dx/dt, a = dv/dt, and integrate. Projectile motion is just two independent constant-acceleration problems (horizontal a=0, vertical a=-g)."
+        },
+        {
+          "heading": "Newton's second law",
+          "body": "Draw the FBD, then apply sum F = ma along each axis. The acceleration points in the direction of the net force. For systems of connected bodies, write sum F = ma for each mass and link them through the shared acceleration or tension."
+        },
+        {
+          "heading": "Energy vs. momentum - pick the shortcut",
+          "body": "Work-energy (W = dKE) is best when you know forces and distances and want a speed; it's scalar, so no angles to chase. Impulse-momentum (F*dt = m*dv) and conservation of momentum shine for collisions and impacts where time or interacting masses matter. Recognizing which to use saves the most time."
+        },
+        {
+          "heading": "Vibrations",
+          "body": "A spring-mass system oscillates at natural frequency wn = sqrt(k/m) rad/s, with f = wn/(2 pi). Adding damping reduces amplitude over time. The FE keeps this basic: find wn, period T = 2 pi/wn, or the frequency."
+        }
+      ],
+      "practiceProblems": [
+        {
+          "id": "dyn-p1",
+          "prompt": "A car accelerates from rest at 3 m/s^2 for 5 s. Final speed?",
+          "choices": [
+            "8 m/s",
+            "15 m/s",
+            "1.67 m/s",
+            "45 m/s"
+          ],
+          "answer": 1,
+          "explanation": "v = v0 + at = 0 + 3(5) = 15 m/s."
+        },
+        {
+          "id": "dyn-p2",
+          "prompt": "A 2 kg mass has a net force of 10 N. Its acceleration is:",
+          "choices": [
+            "20 m/s^2",
+            "5 m/s^2",
+            "0.2 m/s^2",
+            "12 m/s^2"
+          ],
+          "answer": 1,
+          "explanation": "a = F/m = 10/2 = 5 m/s^2."
+        },
+        {
+          "id": "dyn-p3",
+          "prompt": "A 1,000 kg car moving at 20 m/s has kinetic energy:",
+          "choices": [
+            "20,000 J",
+            "200,000 J",
+            "400,000 J",
+            "10,000 J"
+          ],
+          "answer": 1,
+          "explanation": "KE = 0.5 m v^2 = 0.5(1000)(20^2) = 0.5(1000)(400) = 200,000 J."
+        },
+        {
+          "id": "dyn-p4",
+          "prompt": "A spring-mass system with k = 200 N/m and m = 2 kg has natural frequency wn of:",
+          "choices": [
+            "10 rad/s",
+            "100 rad/s",
+            "20 rad/s",
+            "5 rad/s"
+          ],
+          "answer": 0,
+          "explanation": "wn = sqrt(k/m) = sqrt(200/2) = sqrt(100) = 10 rad/s."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "dyn-q1",
+          "prompt": "Work-energy methods are best when you want:",
+          "choices": [
+            "time of impact",
+            "a speed from forces and distance",
+            "collision outcomes",
+            "natural frequency"
+          ],
+          "answer": 1,
+          "explanation": "Work-energy directly relates force, distance, and speed change."
+        },
+        {
+          "id": "dyn-q2",
+          "prompt": "In a perfectly inelastic collision, what is conserved?",
+          "choices": [
+            "kinetic energy",
+            "momentum",
+            "both",
+            "neither"
+          ],
+          "answer": 1,
+          "explanation": "Momentum is always conserved; kinetic energy is not in inelastic collisions."
+        },
+        {
+          "id": "dyn-q3",
+          "prompt": "Period of a spring-mass system is:",
+          "choices": [
+            "2 pi sqrt(m/k)",
+            "sqrt(k/m)",
+            "2 pi sqrt(k/m)",
+            "k/m"
+          ],
+          "answer": 0,
+          "explanation": "T = 2 pi/wn = 2 pi sqrt(m/k)."
+        },
+        {
+          "id": "dyn-q4",
+          "prompt": "Projectile horizontal acceleration (no drag) is:",
+          "choices": [
+            "g",
+            "0",
+            "-g",
+            "9.81 m/s^2"
+          ],
+          "answer": 1,
+          "explanation": "Horizontal acceleration is zero; only gravity acts vertically."
+        }
+      ]
+    },
+    {
+      "id": "mechanics-materials",
+      "title": "Mechanics of Materials",
+      "questions": "9-14",
+      "weight": "~10%",
+      "priority": "Very High",
+      "guide": {
+        "overview": "How solids respond to load: stress and strain, axial/torsion/bending, the stress-strain curve, beam shear and moment, and combined loading. Builds directly on Statics.",
+        "objectives": [
+          "Compute axial, shear, bearing, and thermal stress/strain.",
+          "Apply Hooke's law and use E, G, and Poisson's ratio.",
+          "Find bending stress (sigma = Mc/I) and torsional shear (tau = Tr/J).",
+          "Sketch shear and moment diagrams."
+        ],
+        "prereqs": "Statics (internal reactions, centroids, I). Know section properties.",
+        "watchOuts": [
+          "Confusing area moment of inertia I with polar moment J.",
+          "Using diameter where radius is needed (c, r).",
+          "Forgetting thermal strain delta = alpha*L*dT in constrained members."
+        ]
+      },
+      "keyEquations": [
+        {
+          "name": "Axial stress",
+          "formula": "sigma = P/A",
+          "where": "Stress"
+        },
+        {
+          "name": "Hooke's law",
+          "formula": "sigma = E*epsilon",
+          "where": "Stress-Strain"
+        },
+        {
+          "name": "Bending stress",
+          "formula": "sigma = Mc/I",
+          "where": "Beams"
+        },
+        {
+          "name": "Torsional shear",
+          "formula": "tau = Tr/J",
+          "where": "Torsion"
+        },
+        {
+          "name": "Thermal deformation",
+          "formula": "delta = alpha*L*dT",
+          "where": "Thermal"
+        }
+      ],
+      "lesson": [
+        {
+          "heading": "Stress and strain",
+          "body": "Normal stress sigma = P/A (force over area). Normal strain epsilon = delta/L (deformation over original length). In the elastic region they're proportional via Hooke's law sigma = E*epsilon, where E is Young's modulus. Shear stress tau = V/A and shear strain relate through the shear modulus G."
+        },
+        {
+          "heading": "The stress-strain curve",
+          "body": "Loading a ductile material: a linear elastic region (slope E), then the yield point, plastic deformation, ultimate strength, and finally fracture. The proportional limit ends the straight line; the yield strength is the design-critical value. Poisson's ratio links lateral to axial strain."
+        },
+        {
+          "heading": "Bending and torsion",
+          "body": "A beam in bending develops sigma = Mc/I, where c is the distance from the neutral axis to the outer fiber and I is the area moment of inertia. A shaft in torsion develops tau = Tr/J, where J is the polar moment of inertia. Don't mix up I (bending) and J (torsion), and watch radius vs. diameter."
+        },
+        {
+          "heading": "Shear and moment diagrams",
+          "body": "Start from the support reactions (a statics problem), then track shear V along the beam: point loads cause jumps, distributed loads cause slopes. The moment diagram is the integral of shear - maximum moment occurs where shear crosses zero, and that's usually where bending stress is critical."
+        }
+      ],
+      "practiceProblems": [
+        {
+          "id": "mom-p1",
+          "prompt": "A 5,000 N axial load acts on a 10 mm^2 cross-section. The stress is:",
+          "choices": [
+            "50 MPa",
+            "500 MPa",
+            "0.5 MPa",
+            "5 MPa"
+          ],
+          "answer": 1,
+          "explanation": "sigma = P/A = 5000 N / (10e-6 m^2) = 5e8 Pa = 500 MPa."
+        },
+        {
+          "id": "mom-p2",
+          "prompt": "A steel rod (E = 200 GPa) has strain 0.001. The stress is:",
+          "choices": [
+            "20 MPa",
+            "200 MPa",
+            "2 GPa",
+            "0.2 MPa"
+          ],
+          "answer": 1,
+          "explanation": "sigma = E*epsilon = (200e9)(0.001) = 2e8 Pa = 200 MPa."
+        },
+        {
+          "id": "mom-p3",
+          "prompt": "In sigma = Mc/I, the term c represents:",
+          "choices": [
+            "centroid location",
+            "distance to the outer fiber",
+            "the load",
+            "cross-section area"
+          ],
+          "answer": 1,
+          "explanation": "c is the distance from the neutral axis to the extreme (outer) fiber, where bending stress is largest."
+        },
+        {
+          "id": "mom-p4",
+          "prompt": "A bar of length 2 m, alpha = 12e-6 per C, heated 50 C, free to expand. Elongation?",
+          "choices": [
+            "1.2 mm",
+            "0.6 mm",
+            "12 mm",
+            "0.12 mm"
+          ],
+          "answer": 0,
+          "explanation": "delta = alpha*L*dT = (12e-6)(2)(50) = 1.2e-3 m = 1.2 mm."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "mom-q1",
+          "prompt": "Young's modulus E is the slope of:",
+          "choices": [
+            "the plastic region",
+            "the elastic stress-strain line",
+            "the shear curve",
+            "the moment diagram"
+          ],
+          "answer": 1,
+          "explanation": "E is the slope of the linear elastic portion of the stress-strain curve."
+        },
+        {
+          "id": "mom-q2",
+          "prompt": "Torsional shear stress uses which property?",
+          "choices": [
+            "I",
+            "J",
+            "A",
+            "c only"
+          ],
+          "answer": 1,
+          "explanation": "tau = Tr/J uses the polar moment of inertia J."
+        },
+        {
+          "id": "mom-q3",
+          "prompt": "Maximum bending moment along a beam typically occurs where:",
+          "choices": [
+            "shear is maximum",
+            "shear crosses zero",
+            "the load is applied",
+            "at the supports"
+          ],
+          "answer": 1,
+          "explanation": "The moment is the integral of shear, so it peaks where shear = 0."
+        },
+        {
+          "id": "mom-q4",
+          "prompt": "Poisson's ratio relates:",
+          "choices": [
+            "stress to strain",
+            "lateral to axial strain",
+            "shear to torsion",
+            "load to area"
+          ],
+          "answer": 1,
+          "explanation": "Poisson's ratio = -(lateral strain)/(axial strain)."
+        }
+      ]
+    },
+    {
+      "id": "materials",
+      "title": "Material Properties & Processing",
+      "questions": "4-6",
+      "weight": "~5%",
+      "priority": "Medium",
+      "guide": {
+        "overview": "Properties (mechanical, thermal, electrical), the structure-property link, phase diagrams and heat treatment, and failure modes like fatigue and creep. More conceptual than computational.",
+        "objectives": [
+          "Distinguish strength, stiffness, ductility, hardness, and toughness.",
+          "Read a binary phase diagram (lever rule, eutectic).",
+          "Explain heat treatment effects (annealing, quenching, tempering).",
+          "Recognize fatigue, creep, and brittle vs. ductile failure."
+        ],
+        "prereqs": "Basic chemistry and the stress-strain curve.",
+        "watchOuts": [
+          "Strength (stress to fail) is not stiffness (resistance to deflection, set by E).",
+          "Toughness is area under the stress-strain curve, not hardness.",
+          "Fatigue failure happens below the static yield stress under cyclic load."
+        ]
+      },
+      "keyEquations": [
+        {
+          "name": "Lever rule",
+          "formula": "wt% phase = (opposite arm)/(total tie line)",
+          "where": "Phase Diagrams"
+        },
+        {
+          "name": "Toughness",
+          "formula": "approx area under stress-strain curve",
+          "where": "Properties"
+        }
+      ],
+      "lesson": [
+        {
+          "heading": "Properties vocabulary",
+          "body": "Strength is the stress a material withstands before yielding or fracturing. Stiffness is resistance to elastic deflection, governed by E (a stiff material isn't necessarily strong). Ductility is how much it deforms before fracture; brittleness is the opposite. Hardness resists indentation; toughness is the energy absorbed before fracture (area under the stress-strain curve)."
+        },
+        {
+          "heading": "Structure determines properties",
+          "body": "Crystal structure (BCC, FCC, HCP), grain size, and defects control behavior. Smaller grains generally mean higher strength (Hall-Petch). Alloying and cold work strengthen metals; they also typically reduce ductility."
+        },
+        {
+          "heading": "Phase diagrams and heat treatment",
+          "body": "A binary phase diagram maps phases vs. composition and temperature. The lever rule gives the fraction of each phase in a two-phase region. Heat treatment changes microstructure: annealing softens and relieves stress; quenching (rapid cooling) hardens steel by forming martensite; tempering then restores some toughness."
+        },
+        {
+          "heading": "Failure modes",
+          "body": "Fatigue is failure under repeated cyclic loading, often well below the static strength - the endurance limit matters for steels. Creep is slow deformation under sustained load at high temperature. Ductile failure shows necking and warning; brittle failure is sudden with little deformation."
+        }
+      ],
+      "practiceProblems": [
+        {
+          "id": "mat-p1",
+          "prompt": "Stiffness of a material is primarily set by its:",
+          "choices": [
+            "yield strength",
+            "modulus of elasticity E",
+            "hardness",
+            "ductility"
+          ],
+          "answer": 1,
+          "explanation": "Stiffness (resistance to elastic deflection) is governed by Young's modulus E."
+        },
+        {
+          "id": "mat-p2",
+          "prompt": "Quenching steel produces a hard phase called:",
+          "choices": [
+            "austenite",
+            "martensite",
+            "ferrite",
+            "pearlite"
+          ],
+          "answer": 1,
+          "explanation": "Rapid cooling (quenching) traps carbon, forming hard, brittle martensite."
+        },
+        {
+          "id": "mat-p3",
+          "prompt": "Failure under repeated cyclic loading below the yield stress is:",
+          "choices": [
+            "creep",
+            "fatigue",
+            "fracture toughness",
+            "yielding"
+          ],
+          "answer": 1,
+          "explanation": "That's fatigue - cracks initiate and grow under cyclic stress, failing below the static strength."
+        },
+        {
+          "id": "mat-p4",
+          "prompt": "Toughness corresponds to:",
+          "choices": [
+            "the slope of the elastic line",
+            "area under the stress-strain curve",
+            "the yield point only",
+            "hardness number"
+          ],
+          "answer": 1,
+          "explanation": "Toughness is the energy absorbed before fracture - the area under the stress-strain curve."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "mat-q1",
+          "prompt": "A material that deforms a lot before breaking is:",
+          "choices": [
+            "brittle",
+            "ductile",
+            "stiff",
+            "hard"
+          ],
+          "answer": 1,
+          "explanation": "Large deformation before fracture means ductile."
+        },
+        {
+          "id": "mat-q2",
+          "prompt": "Annealing primarily:",
+          "choices": [
+            "hardens",
+            "softens and relieves stress",
+            "adds carbon",
+            "causes fatigue"
+          ],
+          "answer": 1,
+          "explanation": "Annealing softens the metal and relieves internal stresses."
+        },
+        {
+          "id": "mat-q3",
+          "prompt": "Creep is significant at:",
+          "choices": [
+            "low temperature",
+            "high temperature under sustained load",
+            "high frequency",
+            "zero load"
+          ],
+          "answer": 1,
+          "explanation": "Creep is time-dependent deformation at elevated temperature under constant load."
+        },
+        {
+          "id": "mat-q4",
+          "prompt": "The lever rule gives:",
+          "choices": [
+            "modulus",
+            "phase fractions in a two-phase region",
+            "grain size",
+            "hardness"
+          ],
+          "answer": 1,
+          "explanation": "The lever rule computes the weight fraction of each phase in a two-phase field."
+        }
+      ]
+    },
+    {
+      "id": "fluids",
+      "title": "Fluid Mechanics",
+      "questions": "9-14",
+      "weight": "~10%",
+      "priority": "Very High",
+      "guide": {
+        "overview": "Fluids at rest and in motion: hydrostatic pressure, buoyancy, continuity, Bernoulli's equation, the energy equation with head loss, and the meaning of Reynolds number. A heavy hitter for mechanical candidates.",
+        "objectives": [
+          "Compute hydrostatic pressure and forces on surfaces.",
+          "Apply buoyancy (Archimedes).",
+          "Use continuity (A1*V1 = A2*V2) and Bernoulli's equation.",
+          "Classify flow with Reynolds number and account for head loss."
+        ],
+        "prereqs": "Statics, energy concepts, and unit fluency.",
+        "watchOuts": [
+          "Gauge vs. absolute pressure.",
+          "Bernoulli assumes steady, incompressible, frictionless flow along a streamline.",
+          "Use consistent units; density of water is about 1000 kg/m^3."
+        ]
+      },
+      "keyEquations": [
+        {
+          "name": "Hydrostatic pressure",
+          "formula": "P = rho*g*h",
+          "where": "Fluid Statics"
+        },
+        {
+          "name": "Buoyancy",
+          "formula": "Fb = rho_fluid * g * V_displaced",
+          "where": "Buoyancy"
+        },
+        {
+          "name": "Continuity",
+          "formula": "A1*V1 = A2*V2",
+          "where": "Flow"
+        },
+        {
+          "name": "Bernoulli",
+          "formula": "P + 0.5*rho*V^2 + rho*g*z = constant",
+          "where": "Energy"
+        },
+        {
+          "name": "Reynolds number",
+          "formula": "Re = rho*V*D/mu",
+          "where": "Flow Regime"
+        }
+      ],
+      "lesson": [
+        {
+          "heading": "Fluid statics",
+          "body": "Pressure increases linearly with depth: P = rho*g*h (gauge). This drives forces on dam walls, tank sides, and submerged gates - the resultant acts at the centroid of the pressure distribution. Manometers use the same relation across fluid columns. Always note whether pressure is gauge or absolute."
+        },
+        {
+          "heading": "Buoyancy",
+          "body": "Archimedes' principle: the buoyant force equals the weight of displaced fluid, Fb = rho_fluid * g * V_displaced. An object floats when its weight equals the buoyant force at partial submersion; it sinks when its density exceeds the fluid's."
+        },
+        {
+          "heading": "Continuity and Bernoulli",
+          "body": "Mass conservation for incompressible flow gives A1*V1 = A2*V2 - narrower pipe, faster flow. Bernoulli's equation, P + 0.5*rho*V^2 + rho*g*z = constant, trades pressure, kinetic, and potential energy along a streamline. It assumes steady, incompressible, frictionless flow - handy for nozzles, Venturi meters, and pitot tubes."
+        },
+        {
+          "heading": "Real flow: Reynolds and head loss",
+          "body": "Reynolds number Re = rho*V*D/mu predicts the regime: laminar below about 2,300, turbulent above about 4,000 (in pipes). Real pipe flow loses energy to friction; the energy equation adds a head-loss term, often from the Darcy-Weisbach equation with a friction factor read off the Moody chart."
+        }
+      ],
+      "practiceProblems": [
+        {
+          "id": "flu-p1",
+          "prompt": "Gauge pressure at 5 m depth in water (rho=1000, g=9.81):",
+          "choices": [
+            "49.05 kPa",
+            "4.9 kPa",
+            "490 kPa",
+            "5 kPa"
+          ],
+          "answer": 0,
+          "explanation": "P = rho*g*h = 1000(9.81)(5) = 49,050 Pa = about 49.05 kPa."
+        },
+        {
+          "id": "flu-p2",
+          "prompt": "Water flows in a pipe that narrows from 0.1 m^2 to 0.05 m^2. If V1 = 2 m/s, V2 =",
+          "choices": [
+            "1 m/s",
+            "4 m/s",
+            "2 m/s",
+            "8 m/s"
+          ],
+          "answer": 1,
+          "explanation": "Continuity: A1*V1 = A2*V2, so V2 = (0.1*2)/0.05 = 4 m/s."
+        },
+        {
+          "id": "flu-p3",
+          "prompt": "Buoyant force on a 0.02 m^3 object fully submerged in water:",
+          "choices": [
+            "196 N",
+            "20 N",
+            "1962 N",
+            "0.2 N"
+          ],
+          "answer": 0,
+          "explanation": "Fb = rho*g*V = 1000(9.81)(0.02) = 196.2 N."
+        },
+        {
+          "id": "flu-p4",
+          "prompt": "A Reynolds number of 800 in a pipe indicates flow that is:",
+          "choices": [
+            "turbulent",
+            "laminar",
+            "transitional",
+            "compressible"
+          ],
+          "answer": 1,
+          "explanation": "Re below about 2,300 in a pipe is laminar flow."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "flu-q1",
+          "prompt": "Bernoulli's equation assumes flow is:",
+          "choices": [
+            "compressible and viscous",
+            "steady, incompressible, frictionless",
+            "always turbulent",
+            "unsteady"
+          ],
+          "answer": 1,
+          "explanation": "Bernoulli applies to steady, incompressible, frictionless flow along a streamline."
+        },
+        {
+          "id": "flu-q2",
+          "prompt": "If a pipe's area halves, the velocity:",
+          "choices": [
+            "halves",
+            "doubles",
+            "stays the same",
+            "quadruples"
+          ],
+          "answer": 1,
+          "explanation": "Continuity: smaller area means proportionally higher velocity, so it doubles."
+        },
+        {
+          "id": "flu-q3",
+          "prompt": "Hydrostatic pressure depends on:",
+          "choices": [
+            "surface area",
+            "fluid density and depth",
+            "pipe length",
+            "velocity"
+          ],
+          "answer": 1,
+          "explanation": "P = rho*g*h - density and depth only (not the shape or area)."
+        },
+        {
+          "id": "flu-q4",
+          "prompt": "Reynolds number compares:",
+          "choices": [
+            "pressure to area",
+            "inertial to viscous forces",
+            "mass to volume",
+            "heat to work"
+          ],
+          "answer": 1,
+          "explanation": "Re is the ratio of inertial to viscous forces."
+        }
+      ]
+    },
+    {
+      "id": "thermo",
+      "title": "Thermodynamics (incl. HVAC)",
+      "questions": "10-15",
+      "weight": "~11%",
+      "priority": "Very High",
+      "guide": {
+        "overview": "Energy and its transformations: properties and states, the first and second laws, ideal gases, cycles (Carnot, Rankine, refrigeration), and basic psychrometrics for HVAC. Often the single largest topic.",
+        "objectives": [
+          "Apply the first law (energy balance) to closed and open systems.",
+          "Use ideal gas relations and property tables.",
+          "Compute thermal efficiency and COP for cycles.",
+          "Read a psychrometric chart for HVAC basics."
+        ],
+        "prereqs": "Algebra, unit conversions, and reading property tables.",
+        "watchOuts": [
+          "Absolute temperature (K or R) in all gas-law and efficiency formulas.",
+          "Sign conventions for heat and work.",
+          "COP can exceed 1; efficiency cannot."
+        ]
+      },
+      "keyEquations": [
+        {
+          "name": "First law (closed)",
+          "formula": "Q - W = dU",
+          "where": "Energy Balance"
+        },
+        {
+          "name": "Ideal gas law",
+          "formula": "PV = mRT",
+          "where": "Ideal Gas"
+        },
+        {
+          "name": "Carnot efficiency",
+          "formula": "eta = 1 - T_cold/T_hot",
+          "where": "Cycles"
+        },
+        {
+          "name": "COP (refrigeration)",
+          "formula": "COP = Q_cold / W_in",
+          "where": "Refrigeration"
+        },
+        {
+          "name": "Thermal efficiency",
+          "formula": "eta = W_net / Q_in",
+          "where": "Power Cycles"
+        }
+      ],
+      "lesson": [
+        {
+          "heading": "States and properties",
+          "body": "A pure substance's state is fixed by two independent intensive properties (e.g., P and T, or P and quality x). Use steam/refrigerant tables to look up internal energy u, enthalpy h, and entropy s. In the two-phase region, properties are interpolated by quality: h = hf + x*hfg."
+        },
+        {
+          "heading": "First law: conserve energy",
+          "body": "For a closed system, Q - W = dU. For an open system (control volume) at steady state, energy in equals energy out, including flow work - leading to the enthalpy form for turbines, pumps, nozzles, and heat exchangers. Track sign conventions: heat in positive, work out positive (in the common convention)."
+        },
+        {
+          "heading": "Ideal gases",
+          "body": "PV = mRT (or Pv = RT per unit mass), with T in absolute units. For specific processes - isothermal, isobaric, isochoric, adiabatic - particular relations apply, and du = cv*dT, dh = cp*dT for ideal gases."
+        },
+        {
+          "heading": "Cycles and HVAC",
+          "body": "Power cycles convert heat to work: thermal efficiency eta = W_net/Q_in, capped by the Carnot limit eta = 1 - T_cold/T_hot (absolute temps). Refrigeration and heat pumps are rated by COP = useful heat/work in, which can exceed 1. For HVAC, the psychrometric chart relates dry-bulb temperature, humidity ratio, relative humidity, and enthalpy of moist air."
+        }
+      ],
+      "practiceProblems": [
+        {
+          "id": "thr-p1",
+          "prompt": "A closed system absorbs 500 J of heat and does 200 J of work. dU =",
+          "choices": [
+            "700 J",
+            "300 J",
+            "-300 J",
+            "100 J"
+          ],
+          "answer": 1,
+          "explanation": "First law: dU = Q - W = 500 - 200 = 300 J."
+        },
+        {
+          "id": "thr-p2",
+          "prompt": "A Carnot engine operates between 600 K and 300 K. Max efficiency?",
+          "choices": [
+            "50%",
+            "100%",
+            "30%",
+            "200%"
+          ],
+          "answer": 0,
+          "explanation": "eta = 1 - T_cold/T_hot = 1 - 300/600 = 0.5 = 50%. Temperatures must be absolute."
+        },
+        {
+          "id": "thr-p3",
+          "prompt": "A refrigerator removes 2,000 J from the cold space using 500 J of work. COP =",
+          "choices": [
+            "0.25",
+            "4",
+            "2500",
+            "1.5"
+          ],
+          "answer": 1,
+          "explanation": "COP = Q_cold/W_in = 2000/500 = 4. COP above 1 is normal for refrigeration."
+        },
+        {
+          "id": "thr-p4",
+          "prompt": "For an ideal gas at constant volume, boundary work done is:",
+          "choices": [
+            "P*dV",
+            "zero",
+            "mR*dT",
+            "nonzero and positive"
+          ],
+          "answer": 1,
+          "explanation": "Boundary work W = integral of P dV; at constant volume dV = 0, so W = 0."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "thr-q1",
+          "prompt": "Temperatures in efficiency formulas must be in:",
+          "choices": [
+            "Celsius",
+            "absolute (K or R)",
+            "Fahrenheit",
+            "any unit"
+          ],
+          "answer": 1,
+          "explanation": "Carnot and gas-law relations require absolute temperature."
+        },
+        {
+          "id": "thr-q2",
+          "prompt": "Thermal efficiency of a power cycle is:",
+          "choices": [
+            "Q_in/W_net",
+            "W_net/Q_in",
+            "Q_out/Q_in",
+            "1 + T_c/T_h"
+          ],
+          "answer": 1,
+          "explanation": "eta = W_net/Q_in."
+        },
+        {
+          "id": "thr-q3",
+          "prompt": "In the two-phase region, quality x represents:",
+          "choices": [
+            "temperature",
+            "mass fraction that is vapor",
+            "pressure ratio",
+            "entropy"
+          ],
+          "answer": 1,
+          "explanation": "Quality is the fraction of the mixture mass that is vapor."
+        },
+        {
+          "id": "thr-q4",
+          "prompt": "A COP greater than 1 means:",
+          "choices": [
+            "the device is impossible",
+            "more heat moved than work input",
+            "100% efficiency",
+            "a violation of the first law"
+          ],
+          "answer": 1,
+          "explanation": "COP > 1 simply means the heat moved exceeds the work input - perfectly allowed."
+        }
+      ]
+    },
+    {
+      "id": "heat-transfer",
+      "title": "Heat Transfer",
+      "questions": "5-8",
+      "weight": "~7%",
+      "priority": "High",
+      "guide": {
+        "overview": "The three modes - conduction, convection, radiation - plus fins, the thermal-resistance network, and basic heat exchangers. Treat it like a resistance circuit and it gets much easier.",
+        "objectives": [
+          "Apply Fourier's law for conduction.",
+          "Use Newton's law of cooling for convection.",
+          "Combine resistances in series/parallel (the thermal circuit).",
+          "Understand radiation (Stefan-Boltzmann) and basic heat exchangers."
+        ],
+        "prereqs": "Algebra and the resistance-network analogy from circuits.",
+        "watchOuts": [
+          "Conduction resistance is L/(kA); convection is 1/(hA).",
+          "Radiation uses absolute temperature to the 4th power.",
+          "Keep area and thickness consistent."
+        ]
+      },
+      "keyEquations": [
+        {
+          "name": "Conduction (Fourier)",
+          "formula": "q = k*A*dT/L",
+          "where": "Conduction"
+        },
+        {
+          "name": "Convection",
+          "formula": "q = h*A*dT",
+          "where": "Convection"
+        },
+        {
+          "name": "Radiation",
+          "formula": "q = e*sigma*A*T^4",
+          "where": "Radiation"
+        },
+        {
+          "name": "Conduction resistance",
+          "formula": "R = L/(kA)",
+          "where": "Thermal Circuit"
+        },
+        {
+          "name": "Convection resistance",
+          "formula": "R = 1/(hA)",
+          "where": "Thermal Circuit"
+        }
+      ],
+      "lesson": [
+        {
+          "heading": "Three modes",
+          "body": "Conduction moves heat through solids by molecular interaction: q = k*A*dT/L (Fourier's law). Convection moves heat between a surface and a moving fluid: q = h*A*dT (Newton's law of cooling). Radiation transfers heat as electromagnetic waves, no medium needed: q = e*sigma*A*T^4, with T absolute."
+        },
+        {
+          "heading": "The thermal-resistance analogy",
+          "body": "Heat flow is like current, temperature difference like voltage, and thermal resistance like electrical resistance: q = dT/R_total. Conduction resistance is R = L/(kA); convection resistance is R = 1/(hA). Layers in series add resistances - perfect for composite walls."
+        },
+        {
+          "heading": "Fins and lumped systems",
+          "body": "Fins add surface area to boost convective heat loss. A lumped-capacitance analysis (valid when the Biot number is small) treats an object as a single temperature that decays exponentially toward the surroundings."
+        },
+        {
+          "heading": "Heat exchangers",
+          "body": "Heat exchangers transfer heat between two fluid streams. The rate is q = U*A*dT_lm, where U is the overall heat transfer coefficient and dT_lm is the log-mean temperature difference. Counterflow arrangements are more effective than parallel flow."
+        }
+      ],
+      "practiceProblems": [
+        {
+          "id": "ht-p1",
+          "prompt": "A wall: k=0.5 W/m.K, A=10 m^2, L=0.2 m, dT=30 C. Heat rate?",
+          "choices": [
+            "75 W",
+            "750 W",
+            "7.5 W",
+            "300 W"
+          ],
+          "answer": 1,
+          "explanation": "q = k*A*dT/L = 0.5(10)(30)/0.2 = 150/0.2 = 750 W."
+        },
+        {
+          "id": "ht-p2",
+          "prompt": "Convection: h=25 W/m^2.K, A=2 m^2, dT=40 C. Heat rate?",
+          "choices": [
+            "2000 W",
+            "200 W",
+            "500 W",
+            "1000 W"
+          ],
+          "answer": 0,
+          "explanation": "q = h*A*dT = 25(2)(40) = 2000 W."
+        },
+        {
+          "id": "ht-p3",
+          "prompt": "Thermal resistance of conduction is:",
+          "choices": [
+            "1/(hA)",
+            "L/(kA)",
+            "kA/L",
+            "hA"
+          ],
+          "answer": 1,
+          "explanation": "Conduction resistance R = L/(kA)."
+        },
+        {
+          "id": "ht-p4",
+          "prompt": "Radiation heat transfer depends on temperature to the:",
+          "choices": [
+            "1st power",
+            "2nd power",
+            "4th power",
+            "1/2 power"
+          ],
+          "answer": 2,
+          "explanation": "Stefan-Boltzmann: q is proportional to T^4 (absolute temperature)."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ht-q1",
+          "prompt": "Newton's law of cooling describes:",
+          "choices": [
+            "conduction",
+            "convection",
+            "radiation",
+            "evaporation"
+          ],
+          "answer": 1,
+          "explanation": "q = h*A*dT is convection (Newton's law of cooling)."
+        },
+        {
+          "id": "ht-q2",
+          "prompt": "Composite wall layers in series have resistances that:",
+          "choices": [
+            "add",
+            "multiply",
+            "average",
+            "cancel"
+          ],
+          "answer": 0,
+          "explanation": "Series thermal resistances add, just like series electrical resistors."
+        },
+        {
+          "id": "ht-q3",
+          "prompt": "Radiation requires:",
+          "choices": [
+            "a solid medium",
+            "a fluid",
+            "no medium",
+            "vacuum only"
+          ],
+          "answer": 2,
+          "explanation": "Radiation needs no medium - it transfers through vacuum."
+        },
+        {
+          "id": "ht-q4",
+          "prompt": "Counterflow heat exchangers are generally:",
+          "choices": [
+            "less effective",
+            "more effective than parallel flow",
+            "the same",
+            "only for gases"
+          ],
+          "answer": 1,
+          "explanation": "Counterflow maintains a more favorable temperature difference and is more effective."
+        }
+      ]
+    },
+    {
+      "id": "controls",
+      "title": "Measurements, Instrumentation & Controls",
+      "questions": "4-7",
+      "weight": "~6%",
+      "priority": "Medium",
+      "guide": {
+        "overview": "Sensors and measurement basics (error, calibration, signal conditioning) plus introductory control systems: block diagrams, feedback, transfer functions, and stability concepts.",
+        "objectives": [
+          "Distinguish accuracy, precision, resolution, and error types.",
+          "Describe common sensors (thermocouples, strain gauges, pressure transducers).",
+          "Reduce simple control block diagrams and find transfer functions.",
+          "Understand open vs. closed loop and basic stability."
+        ],
+        "prereqs": "Algebra, basic differential equations, and circuits.",
+        "watchOuts": [
+          "Accuracy (closeness to true value) vs. precision (repeatability).",
+          "Closed-loop transfer function = G/(1+GH) for negative feedback.",
+          "Systematic error shifts the mean; random error spreads it."
+        ]
+      },
+      "keyEquations": [
+        {
+          "name": "Closed-loop TF",
+          "formula": "T = G/(1 + GH)",
+          "where": "Controls"
+        },
+        {
+          "name": "Percent error",
+          "formula": "%err = (measured - true)/true * 100",
+          "where": "Measurement"
+        }
+      ],
+      "lesson": [
+        {
+          "heading": "Measurement fundamentals",
+          "body": "Accuracy is how close a reading is to the true value; precision is how repeatable readings are. Resolution is the smallest detectable change. Systematic (bias) errors consistently shift results and can be calibrated out; random errors scatter around the mean and are reduced by averaging."
+        },
+        {
+          "heading": "Common sensors",
+          "body": "Thermocouples produce a voltage from a temperature difference (Seebeck effect). Strain gauges change resistance with deformation, usually read by a Wheatstone bridge. Pressure transducers, RTDs, and accelerometers each convert a physical quantity into an electrical signal that is then conditioned and digitized."
+        },
+        {
+          "heading": "Control block diagrams",
+          "body": "Systems are modeled as blocks with transfer functions in the Laplace domain. Series blocks multiply; parallel blocks add. For a negative-feedback loop with forward gain G and feedback H, the closed-loop transfer function is T = G/(1 + GH)."
+        },
+        {
+          "heading": "Open vs. closed loop and stability",
+          "body": "Open-loop control acts without measuring the output; closed-loop (feedback) control corrects based on the measured error, improving accuracy and disturbance rejection. A system is stable if its response stays bounded - in terms of poles, all must lie in the left half of the s-plane."
+        }
+      ],
+      "practiceProblems": [
+        {
+          "id": "ctl-p1",
+          "prompt": "A scale reads 10.1 kg for a true 10.0 kg mass, every time. This is:",
+          "choices": [
+            "random error",
+            "systematic (bias) error",
+            "high precision and accuracy",
+            "resolution limit"
+          ],
+          "answer": 1,
+          "explanation": "A consistent offset is a systematic/bias error - it can be calibrated out."
+        },
+        {
+          "id": "ctl-p2",
+          "prompt": "For G = 10 and H = 1 (negative feedback), the closed-loop gain is:",
+          "choices": [
+            "10",
+            "0.5",
+            "11",
+            "10/11 (about 0.91)"
+          ],
+          "answer": 3,
+          "explanation": "T = G/(1+GH) = 10/(1+10) = 10/11 = about 0.91."
+        },
+        {
+          "id": "ctl-p3",
+          "prompt": "A thermocouple measures temperature using the:",
+          "choices": [
+            "photoelectric effect",
+            "Seebeck effect",
+            "Hall effect",
+            "Doppler effect"
+          ],
+          "answer": 1,
+          "explanation": "Thermocouples rely on the Seebeck effect - a voltage from a temperature gradient across dissimilar metals."
+        },
+        {
+          "id": "ctl-p4",
+          "prompt": "Series-connected blocks in a block diagram have transfer functions that:",
+          "choices": [
+            "add",
+            "multiply",
+            "subtract",
+            "divide"
+          ],
+          "answer": 1,
+          "explanation": "Cascaded (series) blocks multiply their transfer functions."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "ctl-q1",
+          "prompt": "Precision refers to:",
+          "choices": [
+            "closeness to true value",
+            "repeatability of readings",
+            "smallest division",
+            "bias"
+          ],
+          "answer": 1,
+          "explanation": "Precision is repeatability; accuracy is closeness to the true value."
+        },
+        {
+          "id": "ctl-q2",
+          "prompt": "Closed-loop control uses:",
+          "choices": [
+            "no measurement",
+            "feedback of the output",
+            "only feedforward",
+            "manual adjustment"
+          ],
+          "answer": 1,
+          "explanation": "Closed-loop control feeds the measured output back to correct error."
+        },
+        {
+          "id": "ctl-q3",
+          "prompt": "A strain gauge is typically read with a:",
+          "choices": [
+            "thermocouple",
+            "Wheatstone bridge",
+            "tachometer",
+            "manometer"
+          ],
+          "answer": 1,
+          "explanation": "Small resistance changes are measured with a Wheatstone bridge."
+        },
+        {
+          "id": "ctl-q4",
+          "prompt": "Averaging many readings reduces:",
+          "choices": [
+            "systematic error",
+            "random error",
+            "resolution",
+            "bias"
+          ],
+          "answer": 1,
+          "explanation": "Averaging reduces random error; it does not remove systematic bias."
+        }
+      ]
+    },
+    {
+      "id": "mech-design",
+      "title": "Mechanical Design & Analysis",
+      "questions": "9-14",
+      "weight": "~10%",
+      "priority": "Very High",
+      "guide": {
+        "overview": "Designing components to carry load safely: factor of safety, static and fatigue failure theories, stress concentrations, and machine elements (bolts, welds, springs, gears, bearings, shafts). Synthesizes statics, mechanics of materials, and materials.",
+        "objectives": [
+          "Apply factor of safety to allowable stress.",
+          "Use failure theories (max shear / distortion energy) for static loading.",
+          "Account for stress concentration and fatigue (endurance limit).",
+          "Size basic machine elements (bolts, springs, gears, shafts)."
+        ],
+        "prereqs": "Mechanics of Materials and Material Properties.",
+        "watchOuts": [
+          "Apply stress-concentration factors at notches, holes, and fillets.",
+          "Fatigue strength is well below static strength under cyclic load.",
+          "Factor of safety = strength / actual stress (keep it consistent)."
+        ]
+      },
+      "keyEquations": [
+        {
+          "name": "Factor of safety",
+          "formula": "FS = strength / actual stress",
+          "where": "Design"
+        },
+        {
+          "name": "Max stress at notch",
+          "formula": "sigma_max = Kt * sigma_nominal",
+          "where": "Stress Concentration"
+        },
+        {
+          "name": "Spring force",
+          "formula": "F = k*x",
+          "where": "Springs"
+        },
+        {
+          "name": "Helical spring rate",
+          "formula": "k = G*d^4 / (8*D^3*N)",
+          "where": "Springs"
+        }
+      ],
+      "lesson": [
+        {
+          "heading": "Factor of safety",
+          "body": "Design components so the material strength comfortably exceeds the actual stress: FS = strength/actual stress, or the allowable stress = strength/FS. Choose FS based on uncertainty, consequences of failure, and load type. A higher factor of safety means a more conservative (heavier, costlier) design."
+        },
+        {
+          "heading": "Static failure theories",
+          "body": "For ductile materials, the distortion-energy (von Mises) theory and the maximum-shear-stress theory predict yielding under combined loading. For brittle materials, the maximum-normal-stress theory applies. Compute the relevant equivalent stress and compare it to the yield (or ultimate) strength."
+        },
+        {
+          "heading": "Stress concentration and fatigue",
+          "body": "Geometric discontinuities - holes, fillets, notches, keyways - amplify local stress by a factor Kt: sigma_max = Kt * sigma_nominal. Under cyclic loading this drives fatigue. Steels show an endurance limit (stress below which infinite life is possible); designing below it, with modifying factors, prevents fatigue failure."
+        },
+        {
+          "heading": "Machine elements",
+          "body": "Bolts are sized for tensile and shear stress and preload. Springs follow F = k*x with helical spring rate k = G*d^4/(8*D^3*N). Gears transmit torque through meshing teeth with a velocity ratio set by tooth counts. Shafts carry combined bending and torsion - designed using a combined-stress or fatigue criterion."
+        }
+      ],
+      "practiceProblems": [
+        {
+          "id": "md-p1",
+          "prompt": "A part's material yields at 250 MPa and the actual stress is 100 MPa. Factor of safety?",
+          "choices": [
+            "2.5",
+            "0.4",
+            "150",
+            "350"
+          ],
+          "answer": 0,
+          "explanation": "FS = strength/actual stress = 250/100 = 2.5."
+        },
+        {
+          "id": "md-p2",
+          "prompt": "A hole gives Kt = 2.5 in a member with nominal stress 80 MPa. Peak stress?",
+          "choices": [
+            "32 MPa",
+            "200 MPa",
+            "82.5 MPa",
+            "160 MPa"
+          ],
+          "answer": 1,
+          "explanation": "sigma_max = Kt * sigma_nominal = 2.5 * 80 = 200 MPa at the edge of the hole."
+        },
+        {
+          "id": "md-p3",
+          "prompt": "A spring with k = 500 N/m is compressed 0.04 m. Force?",
+          "choices": [
+            "20 N",
+            "12,500 N",
+            "0.08 N",
+            "504 N"
+          ],
+          "answer": 0,
+          "explanation": "F = k*x = 500 * 0.04 = 20 N."
+        },
+        {
+          "id": "md-p4",
+          "prompt": "The endurance limit is relevant to:",
+          "choices": [
+            "static tension only",
+            "fatigue (cyclic) loading",
+            "thermal stress",
+            "buckling"
+          ],
+          "answer": 1,
+          "explanation": "The endurance limit is the cyclic stress below which steels can have effectively infinite fatigue life."
+        }
+      ],
+      "quiz": [
+        {
+          "id": "md-q1",
+          "prompt": "A higher factor of safety generally yields a design that is:",
+          "choices": [
+            "lighter",
+            "more conservative",
+            "cheaper",
+            "less reliable"
+          ],
+          "answer": 1,
+          "explanation": "Higher FS means more margin - a more conservative (and usually heavier/costlier) design."
+        },
+        {
+          "id": "md-q2",
+          "prompt": "Von Mises (distortion energy) theory predicts failure of:",
+          "choices": [
+            "brittle materials",
+            "ductile materials",
+            "fluids",
+            "composites only"
+          ],
+          "answer": 1,
+          "explanation": "The distortion-energy theory is used for ductile material yielding."
+        },
+        {
+          "id": "md-q3",
+          "prompt": "Stress concentration factor Kt is largest at:",
+          "choices": [
+            "uniform sections",
+            "notches, holes, fillets",
+            "the centroid",
+            "supports"
+          ],
+          "answer": 1,
+          "explanation": "Geometric discontinuities concentrate stress, raising Kt."
+        },
+        {
+          "id": "md-q4",
+          "prompt": "Helical spring rate increases most with:",
+          "choices": [
+            "more coils",
+            "larger wire diameter d",
+            "larger coil diameter D",
+            "lower G"
+          ],
+          "answer": 1,
+          "explanation": "k = G*d^4/(8*D^3*N) - the wire diameter d to the 4th power dominates."
+        }
+      ]
+    }
+  ],
+  "practiceTests": [
+    {
+      "id": "pt1",
+      "title": "Practice Test 1 - Mixed Fundamentals",
+      "time": "30 min",
+      "questions": [
+        {
+          "id": "pt1-1",
+          "prompt": "A 8 V source drives a 2 Ohm resistor. Power dissipated?",
+          "choices": [
+            "16 W",
+            "32 W",
+            "4 W",
+            "8 W"
+          ],
+          "answer": 1,
+          "explanation": "P = V^2/R = 64/2 = 32 W."
+        },
+        {
+          "id": "pt1-2",
+          "prompt": "Mean of 2, 4, 6, 8, 10:",
+          "choices": [
+            "5",
+            "6",
+            "30",
+            "4"
+          ],
+          "answer": 1,
+          "explanation": "(2+4+6+8+10)/5 = 30/5 = 6."
+        },
+        {
+          "id": "pt1-3",
+          "prompt": "A simply supported 8 m beam has a 400 N load at midspan. Each reaction?",
+          "choices": [
+            "100 N",
+            "200 N",
+            "400 N",
+            "800 N"
+          ],
+          "answer": 1,
+          "explanation": "By symmetry each support carries half: 200 N."
+        },
+        {
+          "id": "pt1-4",
+          "prompt": "sigma = P/A for 6000 N over 3e-4 m^2:",
+          "choices": [
+            "20 MPa",
+            "2 MPa",
+            "200 MPa",
+            "0.02 MPa"
+          ],
+          "answer": 0,
+          "explanation": "6000/3e-4 = 2e7 Pa = 20 MPa."
+        },
+        {
+          "id": "pt1-5",
+          "prompt": "Gauge pressure at 10 m water depth:",
+          "choices": [
+            "98.1 kPa",
+            "9.81 kPa",
+            "981 kPa",
+            "100 kPa"
+          ],
+          "answer": 0,
+          "explanation": "P = rho*g*h = 1000(9.81)(10) = 98,100 Pa = about 98.1 kPa."
+        },
+        {
+          "id": "pt1-6",
+          "prompt": "Carnot efficiency between 800 K and 400 K:",
+          "choices": [
+            "50%",
+            "40%",
+            "100%",
+            "25%"
+          ],
+          "answer": 0,
+          "explanation": "1 - 400/800 = 0.5 = 50%."
+        },
+        {
+          "id": "pt1-7",
+          "prompt": "Derivative of 4x^3:",
+          "choices": [
+            "12x^2",
+            "4x^2",
+            "x^4",
+            "12x"
+          ],
+          "answer": 0,
+          "explanation": "d/dx 4x^3 = 12x^2."
+        },
+        {
+          "id": "pt1-8",
+          "prompt": "FS for 300 MPa strength and 120 MPa stress:",
+          "choices": [
+            "2.5",
+            "0.4",
+            "180",
+            "2.0"
+          ],
+          "answer": 0,
+          "explanation": "300/120 = 2.5."
+        },
+        {
+          "id": "pt1-9",
+          "prompt": "Two 4 Ohm resistors in parallel:",
+          "choices": [
+            "8 Ohm",
+            "2 Ohm",
+            "4 Ohm",
+            "1 Ohm"
+          ],
+          "answer": 1,
+          "explanation": "4*4/(4+4) = 16/8 = 2 Ohm."
+        },
+        {
+          "id": "pt1-10",
+          "prompt": "F = ma for m = 5 kg, a = 4 m/s^2:",
+          "choices": [
+            "20 N",
+            "1.25 N",
+            "9 N",
+            "0.8 N"
+          ],
+          "answer": 0,
+          "explanation": "F = 5*4 = 20 N."
+        }
+      ]
+    },
+    {
+      "id": "pt2",
+      "title": "Practice Test 2 - Mechanical Core",
+      "time": "30 min",
+      "questions": [
+        {
+          "id": "pt2-1",
+          "prompt": "Continuity: pipe area drops from 0.2 to 0.1 m^2, V1 = 3 m/s. V2?",
+          "choices": [
+            "1.5 m/s",
+            "6 m/s",
+            "3 m/s",
+            "9 m/s"
+          ],
+          "answer": 1,
+          "explanation": "A1*V1=A2*V2, so V2 = 0.2*3/0.1 = 6 m/s."
+        },
+        {
+          "id": "pt2-2",
+          "prompt": "Conduction q for k=2, A=4 m^2, dT=20, L=0.1 m:",
+          "choices": [
+            "1600 W",
+            "160 W",
+            "16 W",
+            "320 W"
+          ],
+          "answer": 0,
+          "explanation": "q = k*A*dT/L = 2*4*20/0.1 = 160/0.1 = 1600 W."
+        },
+        {
+          "id": "pt2-3",
+          "prompt": "KE of 800 kg car at 30 m/s:",
+          "choices": [
+            "360,000 J",
+            "24,000 J",
+            "12,000 J",
+            "720,000 J"
+          ],
+          "answer": 0,
+          "explanation": "0.5*800*30^2 = 0.5*800*900 = 360,000 J."
+        },
+        {
+          "id": "pt2-4",
+          "prompt": "Bending stress sigma = Mc/I; doubling c (others equal):",
+          "choices": [
+            "halves sigma",
+            "doubles sigma",
+            "no change",
+            "quarters sigma"
+          ],
+          "answer": 1,
+          "explanation": "sigma is proportional to c, so doubling c doubles stress."
+        },
+        {
+          "id": "pt2-5",
+          "prompt": "First law: Q=800 J in, W=300 J out. dU?",
+          "choices": [
+            "1100 J",
+            "500 J",
+            "-500 J",
+            "300 J"
+          ],
+          "answer": 1,
+          "explanation": "dU = Q - W = 800 - 300 = 500 J."
+        },
+        {
+          "id": "pt2-6",
+          "prompt": "Re = rho*V*D/mu; Re = 5000 indicates:",
+          "choices": [
+            "laminar",
+            "turbulent",
+            "static",
+            "transitional only"
+          ],
+          "answer": 1,
+          "explanation": "Re above about 4000 in pipes is turbulent."
+        },
+        {
+          "id": "pt2-7",
+          "prompt": "Spring k=1000 N/m stretched 0.02 m. Force?",
+          "choices": [
+            "20 N",
+            "50 N",
+            "2 N",
+            "1020 N"
+          ],
+          "answer": 0,
+          "explanation": "F = k*x = 1000*0.02 = 20 N."
+        },
+        {
+          "id": "pt2-8",
+          "prompt": "Present worth of $2000 in 3 yr at 10%:",
+          "choices": [
+            "$1503",
+            "$1818",
+            "$2662",
+            "$1400"
+          ],
+          "answer": 0,
+          "explanation": "P = 2000/1.1^3 = 2000/1.331 = $1503."
+        },
+        {
+          "id": "pt2-9",
+          "prompt": "Moment of 80 N at 0.25 m perpendicular:",
+          "choices": [
+            "20 N*m",
+            "320 N*m",
+            "2 N*m",
+            "80 N*m"
+          ],
+          "answer": 0,
+          "explanation": "M = F*d = 80*0.25 = 20 N*m."
+        },
+        {
+          "id": "pt2-10",
+          "prompt": "COP of fridge: 3000 J removed, 750 J work:",
+          "choices": [
+            "0.25",
+            "4",
+            "2250",
+            "3.75"
+          ],
+          "answer": 1,
+          "explanation": "COP = 3000/750 = 4."
+        }
+      ]
+    }
+  ]
+}

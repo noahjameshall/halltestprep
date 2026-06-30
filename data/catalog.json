@@ -1,0 +1,32 @@
+{
+  "courses": [
+    {
+      "id": "fe-mechanical",
+      "title": "FE Mechanical",
+      "status": "available",
+      "blurb": "Full prep for the FE Mechanical CBT - 14 knowledge areas, hundreds of practice questions.",
+      "color": "#2563eb"
+    },
+    {
+      "id": "fe-civil",
+      "title": "FE Civil",
+      "status": "coming-soon",
+      "blurb": "Structural, geotechnical, water resources, transportation, and more.",
+      "color": "#0891b2"
+    },
+    {
+      "id": "fe-electrical",
+      "title": "FE Electrical & Computer",
+      "status": "coming-soon",
+      "blurb": "Circuits, electronics, signals, and computer systems.",
+      "color": "#7c3aed"
+    },
+    {
+      "id": "pe-mechanical",
+      "title": "PE Mechanical",
+      "status": "coming-soon",
+      "blurb": "The next step after the FE - professional licensure prep.",
+      "color": "#dc2626"
+    }
+  ]
+}
